@@ -1,0 +1,47 @@
+<mat-drawer-container class="dashboard-container" autosize>
+    <mat-drawer #drawer class="side" mode="side">
+      <span><img src="../../../assets/logo.png" alt="logo" class="logo mx-auto"></span>
+      @if (showFiller) {
+        <div class="text-white text-center">
+          Inputs to log in
+        </div>
+      }
+
+      <mat-list role="list" class="py-5 text-center">
+        <mat-list-item role="listitem" class="listLinks">My profile</mat-list-item>
+        <mat-list-item role="listitem" class="listLinks">Courses</mat-list-item>
+        <mat-list-item role="listitem" class="listLinks">Students</mat-list-item>
+        <mat-list-item role="listitem" class="listLinks">Careers</mat-list-item>
+        <mat-list-item role="listitem" class="listLinks">About the teacher</mat-list-item>
+      </mat-list>
+
+      <button  mat-raised-button class="boton p-2 m-2">
+        Sign In
+      </button>
+      <button (click)="showFiller = !showFiller" mat-raised-button class="boton p-2 mx-3">
+        Log In
+      </button>
+
+    </mat-drawer>
+  
+    <div class="example-sidenav-content">
+        <mat-toolbar class="toolbar">
+            <button  (click)="drawer.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+              <mat-icon class="iconMenu">menu</mat-icon>
+            </button>
+            <span><img src="../../../assets/logo.png" alt="logo" class="logo"></span>
+            <span class="mx-2 text-xl text-purple-600">English Juanma</span>
+            <span class="example-spacer"></span>
+            <div class="mx-auto">
+              <img src="../../../assets/perfil.jpeg" alt="perfil" class="perfil">
+              <span class="text-white mx-auto">User Name </span>
+              <span class="text-purple-600"> Teacher</span>
+            </div>
+            <span class="text-green-400">{{ currentDateTime }}</span>
+          </mat-toolbar>
+          <div class="p-3">
+             <app-users></app-users>
+          </div>
+    </div>
+</mat-drawer-container>
+  
